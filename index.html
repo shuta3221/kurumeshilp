@@ -541,6 +541,35 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
 .stat-num{order:2}
 </style>
 
+<style>
+/* Keep the brand UI consistent when the device uses a dark color scheme. */
+:root[data-theme="dark"]{
+  --red:#f52900;
+  --red-hover:#d92300;
+  --red-soft:#fff2ef;
+  --blue:#0771b7;
+  --blue-soft:#e8f2f9;
+  --amber:#c97a12;
+  --amber-soft:#fdf1de;
+  --on-red:#fff;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --red:#f52900;
+    --red-hover:#d92300;
+    --red-soft:#fff2ef;
+    --blue:#0771b7;
+    --blue-soft:#e8f2f9;
+    --amber:#c97a12;
+    --amber-soft:#fdf1de;
+    --on-red:#fff;
+  }
+}
+#flow .flow-step:nth-child(1){background:linear-gradient(180deg,#fff2ef 0,#fff 46%)}
+#flow .flow-step:nth-child(2){background:linear-gradient(180deg,#e8f2f9 0,#fff 46%)}
+#flow .flow-step:nth-child(3){background:linear-gradient(180deg,#fdf1de 0,#fff 46%)}
+</style>
+
 </head>
 <body>
 <header class="site-header" id="siteHeader">
