@@ -573,6 +573,23 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   background:var(--red-hover);
   border-color:var(--red-hover);
 }
+.usecase-section{padding:26px 0 108px;background:#fff}
+.usecase-head{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(360px,1.15fr);align-items:end;gap:52px;padding-top:42px;border-top:1px solid var(--line)}
+.usecase-head .eyebrow{margin-bottom:14px}
+.usecase-head h2{margin:0;font-size:clamp(30px,3.5vw,44px)}
+.usecase-head .section-sub{margin:0 0 4px;max-width:42em}
+.usecase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}
+.usecase-card{position:relative;min-height:250px;padding:28px 24px 26px;background:#faf9f7;border:1px solid var(--line);overflow:hidden}
+.usecase-card::after{content:attr(data-no);position:absolute;right:16px;top:5px;color:#ebe7e3;font-family:var(--font-display);font-size:68px;font-weight:800;line-height:1;letter-spacing:-.06em}
+.usecase-icon{position:relative;z-index:1;display:grid;place-items:center;width:54px;height:54px;margin-bottom:30px;border-radius:12px;background:#fff2ef;color:var(--red)}
+.usecase-card:nth-child(2) .usecase-icon{background:#e8f2f9;color:var(--blue)}
+.usecase-card:nth-child(3) .usecase-icon{background:#fdf1de;color:var(--amber)}
+.usecase-card:nth-child(4) .usecase-icon{background:#edf5f2;color:#177462}
+.usecase-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.usecase-card h3{position:relative;z-index:1;margin:0 0 12px;font-size:18px;line-height:1.5}
+.usecase-card p{position:relative;z-index:1;margin:0;color:var(--ink-soft);font-size:14px;line-height:1.85}
+@media(max-width:900px){.usecase-head{grid-template-columns:1fr;gap:16px}.usecase-grid{grid-template-columns:repeat(2,1fr)}.usecase-card{min-height:220px}}
+@media(max-width:560px){.usecase-section{padding:10px 0 76px}.usecase-head{padding-top:34px}.usecase-grid{grid-template-columns:1fr;gap:10px;margin-top:28px}.usecase-card{min-height:auto;padding:22px 22px 23px}.usecase-card::after{font-size:58px}.usecase-icon{width:48px;height:48px;margin-bottom:18px}.usecase-card h3{font-size:17px}.usecase-card p{font-size:14px}}
 </style>
 
 </head>
@@ -704,6 +721,41 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
           <p>請求書の分割、部署別の可視化、注文時の経理情報取得まで。経理・管理部門のための新機能です。</p>
           <span class="svc-link">このページで詳しく <span class="arrow down">↓</span></span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03-2 利用シーン -->
+  <section class="usecase-section" id="usecases">
+    <div class="shell reveal">
+      <div class="usecase-head">
+        <div>
+          <div class="eyebrow">Use Cases</div>
+          <h2>さまざまな法人利用を、<br>ひとつの窓口で。</h2>
+        </div>
+        <p class="section-sub">日常の会議から大規模なイベントまで。利用する部署や案件に合わせて、手配と請求管理を柔軟に整理できます。</p>
+      </div>
+      <div class="usecase-grid stagger">
+        <article class="usecase-card" data-no="01">
+          <span class="usecase-icon" aria-hidden="true"><svg><use href="#ico-building"/></svg></span>
+          <h3>日常の社内利用</h3>
+          <p>部署ごとのランチや日々のお弁当手配を、会社単位でまとめて管理できます。</p>
+        </article>
+        <article class="usecase-card" data-no="02">
+          <span class="usecase-icon" aria-hidden="true"><svg><use href="#ico-calendar"/></svg></span>
+          <h3>会議・研修</h3>
+          <p>日時・人数・予算に合わせた手配を、専任オペレーターがサポートします。</p>
+        </article>
+        <article class="usecase-card" data-no="03">
+          <span class="usecase-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="10" width="17" height="14" rx="2"/><path d="m22 14 5-3v12l-5-3zM10 10l3-5h8l3 5"/><circle cx="13.5" cy="17" r="3.5"/></svg></span>
+          <h3>撮影・番組制作</h3>
+          <p>番組・ロケ・案件単位で、利用実績と請求先を整理できます。</p>
+        </article>
+        <article class="usecase-card" data-no="04">
+          <span class="usecase-icon" aria-hidden="true"><svg><use href="#ico-flag"/></svg></span>
+          <h3>イベント運営</h3>
+          <p>大人数のお弁当選びから発注までコンシェルジュが代行。イベント単位で請求も整理します。</p>
+        </article>
       </div>
     </div>
   </section>
