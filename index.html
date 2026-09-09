@@ -404,6 +404,12 @@ footer.site-footer { background: var(--band-bg); color: var(--band-ink); padding
 .footer-brand p { font-size: 12.5px; color: rgba(247,245,238,0.5); max-width: 30ch; margin-top: 10px; }
 .footer-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(247,245,238,0.14); font-family: var(--font-mono); font-size: 11px; color: rgba(247,245,238,0.4); }
 
+.consult-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.consult-tabs button{font:inherit;font-weight:700;font-size:18px;padding:24px 16px;border:2px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);cursor:pointer}
+.consult-tabs button[aria-selected="true"]{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.consult-tabs button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.consult-panel[hidden]{display:none!important}
+@media(max-width:560px){.consult-tabs{gap:8px}.consult-tabs button{font-size:16px;padding:20px 8px}}
 </style>
 <style>
 /* 2026 visual refinement */
@@ -610,7 +616,8 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
     </div>
     <nav class="hnav">
       <span class="navlinks">
-        <a href="#solution">経理ソリューション</a>
+        <a href="#windows">2つの相談窓口</a>
+        <a href="#bulk">大口発注</a>
         <a href="#pricing">料金</a>
         <a href="#faq">よくある質問</a>
       </span>
@@ -655,14 +662,12 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   <section class="hero">
     <div class="shell hero-grid">
       <div class="eyebrow">法人のお客様へ</div>
-      <h1>お弁当の手配を、<br>会社の仕組みに。</h1>
+      <h1>大人数のお弁当手配も、<br>会社の精算・管理も。</h1>
       <div class="hero-illustration" role="img" aria-label="タブレットで法人向けお弁当手配サービスを利用する担当者のイラスト" style="background-image:url(&quot;hero-kurumeshi-transparent.png&quot;);"></div>
-      <p class="section-sub">一括精算・コンシェルジュ・経理ソリューションをひとつにした、くるめし弁当の法人専用窓口です。</p>
+      <p class="section-sub">大量・継続的な発注を相談したい方も、社内の請求・利用状況を整理したい方も。くるめしが、ご相談内容に合わせて法人のお弁当利用をサポートします。</p>
       <div class="badge-row">
-        <span class="badge"><b>初期費用0円</b></span>
-        <span class="badge"><b>月額費用0円</b></span>
-        <span class="badge">利用人数<b>無制限</b></span>
-        <span class="badge">インボイス制度<b>対応済み</b></span>
+        <span class="badge"><b>大口・継続発注の相談</b></span>
+        <span class="badge"><b>一括精算・利用管理の相談</b></span>
       </div>
       <div class="btn-row">
         <a class="btn cta-button" href="#contact">資料請求する<svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4M9 12h6M9 16h6"/></svg></a>
@@ -671,6 +676,67 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
     </div>
   </section>
 
+  <style>
+    #windows{padding-bottom:24px}
+    .consult-panel > section:first-child{padding-top:36px}
+    .bulk-visual{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:36px;margin-top:28px}
+    .bulk-visual img{width:100%;max-height:350px;object-fit:contain}
+    .bulk-visual .pain-grid{grid-template-columns:1fr;margin:0}
+    .bulk-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:32px 0}
+    .bulk-flow li{position:relative;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--red);padding:24px}
+    .bulk-flow li:not(:last-child)::after{content:'→';position:absolute;right:-24px;top:45%;color:var(--red);font-size:22px}
+    .bulk-flow .step-number{font-size:14px;font-weight:700;color:var(--red)}
+    .bulk-flow h3{margin:12px 0 8px;font-size:20px}
+    .bulk-flow p{margin:0;font-size:16px}
+    .bulk-flow svg{width:32px;height:32px;color:var(--red);margin-top:14px}
+    @media(max-width:720px){.bulk-visual{grid-template-columns:1fr;gap:20px}.bulk-visual img{max-height:260px}.bulk-flow{grid-template-columns:1fr;gap:26px}.bulk-flow li:not(:last-child)::after{content:'↓';top:auto;bottom:-29px;right:50%}#windows{padding-bottom:16px}.consult-panel > section:first-child{padding-top:28px}}
+  </style>
+  <section id="windows" class="alt">
+    <div class="shell">
+      <div class="eyebrow">法人向けの2つの相談窓口</div>
+      <h2>いま解決したいことから、<br>お選びください。</h2>
+      <div class="consult-tabs" role="tablist" aria-label="相談窓口">
+        <button type="button" id="tab-bulk" role="tab" aria-selected="true" aria-controls="panel-bulk">大口発注者向け</button>
+        <button type="button" id="tab-accounting" role="tab" aria-selected="false" aria-controls="panel-accounting" tabindex="-1">管理部門向け</button>
+      </div>
+      <p>両方のご相談も承ります。必要な支援からご相談ください。</p>
+    </div>
+  </section>
+  <div id="panel-bulk" class="consult-panel" role="tabpanel" aria-labelledby="tab-bulk" tabindex="0">
+  <section class="alt">
+    <div class="shell">
+      <div class="eyebrow">Problem</div>
+      <h2>大人数のお弁当手配を、<br>ひとりで抱えていませんか。</h2>
+      <div class="bulk-visual">
+      <img src="ordering-support.webp" alt="複数のお弁当を前に、どれを選べばよいか悩む発注担当者" width="900" height="900">
+      <div class="pain-grid">
+        <article class="pain-card"><h3>毎回の店舗選びが大変</h3><p>予算・人数・好みや食事への配慮事項を確認しながら、お弁当を選ぶのに時間がかかる。</p></article>
+        <article class="pain-card"><h3>継続的な手配に追われる</h3><p>撮影・研修・イベントの日程に合わせた発注や、配送条件の確認をまとめて相談したい。</p></article>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section id="bulk">
+    <div class="shell">
+      <div class="eyebrow">Solution / For Bulk Orders</div>
+      <h2>大人数の手配を、<br>相談できる担当者と。</h2>
+      <p class="section-sub">会議・研修、撮影、イベントなど。店舗選びから発注のサポートまで、専任担当がお客様の利用条件を伺い、ご提案します。</p>
+      <ol class="bulk-flow" aria-label="お弁当手配のサポートの流れ">
+        <li><span class="step-number">STEP 01</span><svg aria-hidden="true"><use href="#ico-person"/></svg><h3>条件を相談</h3><p>人数・予算・日程・お届け場所を担当者へ。食事への配慮事項も伺います。</p></li>
+        <li><span class="step-number">STEP 02</span><svg aria-hidden="true"><use href="#ico-menu"/></svg><h3>提案から選ぶ</h3><p>条件に合う店舗やお弁当をご提案。候補を比較して、内容を決めます。</p></li>
+        <li><span class="step-number">STEP 03</span><svg aria-hidden="true"><use href="#ico-calendar"/></svg><h3>手配を進める</h3><p>決まった内容をもとに発注をサポート。次回以降の手配も相談できます。</p></li>
+      </ol>
+      <div class="pain-grid">
+        <article class="pain-card"><h3>条件に合うお弁当をご提案</h3><p>人数・ご予算・お届け日時・場所を伺い、店舗やお弁当選びをサポート。食事に関する配慮事項も、対応可否を確認しながら進めます。</p></article>
+        <article class="pain-card"><h3>継続的な手配もご相談</h3><p>連日の撮影や定期的な研修など、繰り返し発生する発注をご相談いただけます。担当者と手配の進め方を決め、日々の負担を減らします。</p></article>
+      </div>
+      <p>法人向けのサポート範囲・適用条件は、ご利用状況とご希望を伺って個別にご案内します。</p>
+      <a class="btn" href="https://www.kurumesi-bentou.com/concierge/">お弁当の手配を相談する</a>
+      <p>現在のコンシェルジュ窓口へ進みます。法人向けの個別条件は、お問い合わせ時にご相談ください。</p>
+    </div>
+  </section>
+  </div>
+  <div id="panel-accounting" class="consult-panel" role="tabpanel" aria-labelledby="tab-accounting" tabindex="0" hidden>
   <!-- 02 課題提起 -->
   <section class="alt" id="pain">
     <div class="shell reveal">
@@ -771,17 +837,17 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
         <div class="merit-row">
           <div class="merit-num-big">01</div>
           <span class="merit-symbol red" role="img" aria-label="グループ別に分かれた請求書"><svg viewBox="0 0 48 48" fill="none"><path class="back" d="M13 12h18v25H13z"/><path class="front" d="M19 8h18v25H19z"/><path d="M24 15h8M24 21h8M24 27h5"/></svg></span>
-          <div class="merit-copy"><h3>経理の突合が消える</h3><p>請求書はグループ単位で自動的に分かれて発行されます。全社一括はもちろん、部門・チーム・番組やイベント単位まで、粒度は自由に設定できます。</p></div>
+          <div class="merit-copy"><h3>請求処理をまとめる</h3><p>一括精算の申し込み単位で請求書をまとめます。部署ごとの請求をご希望の場合は、一括精算の登録単位を含めて運用をご相談いただけます。</p></div>
         </div>
         <div class="merit-row">
           <div class="merit-num-big">02</div>
           <span class="merit-symbol blue" role="img" aria-label="支出状況を示すグラフ"><svg viewBox="0 0 48 48" fill="none"><path class="axis" d="M10 37h29"/><path class="bar" d="M14 28h6v9h-6zM23 20h6v17h-6zM32 11h6v26h-6z"/><path class="accent" d="m13 21 9-7 7 3 10-9"/></svg></span>
-          <div class="merit-copy"><h3>全社の支出が見える</h3><p>部門・利用者ごとの利用実績と予実を、必要なときにいつでも確認できます。</p></div>
+          <div class="merit-copy"><h3>利用状況を把握する</h3><p>部門・利用者ごとの利用実績レポートをご相談いただけます。集計単位や提供頻度、予実管理への対応は、導入時に確認します。</p></div>
         </div>
         <div class="merit-row">
           <div class="merit-num-big">03</div>
           <span class="merit-symbol amber" role="img" aria-label="全社へ広がる組織"><svg viewBox="0 0 48 48" fill="none"><path class="building" d="M10 15h17v23H10zM27 23h11v15H27z"/><path d="M15 21h3m4 0h2m-9 6h3m4 0h2m-9 6h3m4 0h2m8-5h3m-3 5h3"/><path class="accent" d="M27 17 38 7m0 0h-8m8 0v8"/></svg></span>
-          <div class="merit-copy"><h3>全社に広げられる</h3><p>個別のアカウント設定に追われることなく、部門を横断して展開できます。</p></div>
+          <div class="merit-copy"><h3>社内での利用を整える</h3><p>法人内の利用者登録や一括精算への招待・承諾を通じて、利用者と請求単位を整理します。初期設定の進め方もご相談ください。</p></div>
         </div>
       </div>
 
@@ -829,6 +895,7 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
     </div>
   </section>
 
+  </div>
   <!-- CTA 1 -->
   <section>
     <div class="shell reveal">
@@ -846,16 +913,16 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   <section id="compare">
     <div class="shell reveal">
       <div class="eyebrow">Comparison</div>
-      <h2>一括精算だけでは、足りなかった機能。</h2>
+      <h2>ご相談内容に合わせたサポート。</h2>
       <div class="table-wrap">
         <table class="compare">
-          <thead><tr><th></th><th>一括精算のみ</th><th>法人専用窓口</th></tr></thead>
+          <thead><tr><th>相談内容</th><th>窓口</th><th>ご案内する内容</th></tr></thead>
           <tbody>
-            <tr><td>部門・イベント単位の請求書分割</td><td class="mark-no"><span>一部対応</span></td><td class="mark-yes"><span>対応</span></td></tr>
-            <tr><td>部門別の利用実績可視化</td><td class="mark-no"><span>未対応</span></td><td class="mark-yes"><span>対応</span></td></tr>
-            <tr><td>予実管理・予算超過アラート</td><td class="mark-no"><span>未対応</span></td><td class="mark-yes"><span>対応</span></td></tr>
-            <tr><td>発注相談・代行（コンシェルジュ）</td><td class="mark-no"><span>未対応</span></td><td class="mark-yes"><span>対応</span></td></tr>
-            <tr><td>全社展開のしやすさ</td><td class="mark-no"><span>一部対応</span></td><td class="mark-yes"><span>対応</span></td></tr>
+            <tr><td>請求をまとめたい</td><td>管理向け</td><td>一括精算の登録単位に応じた請求</td></tr>
+            <tr><td>部門別の実績を把握したい</td><td>管理向け</td><td>集計単位・頻度を確認してレポートをご案内</td></tr>
+            <tr><td>予算と利用実績を比較したい</td><td>管理向け</td><td>対応範囲・運用方法を個別に相談</td></tr>
+            <tr><td>大量・継続的な発注を任せたい</td><td>大口発注向け</td><td>条件のヒアリング・提案・手配支援</td></tr>
+            <tr><td>法人ごとの条件を相談したい</td><td>大口発注向け</td><td>利用状況に応じてサポート範囲を確認</td></tr>
           </tbody>
         </table>
       </div>
@@ -931,22 +998,22 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   <section class="alt" id="pricing">
     <div class="shell reveal">
       <div class="eyebrow">Pricing</div>
-      <h2>初期費用 0円、月額費用 0円。</h2>
+      <h2>ご利用条件を伺い、個別にご案内します。</h2>
       <div class="stat-strip stagger">
         <div class="stat-item">
-          <div class="stat-num">¥0</div>
-          <div class="stat-lbl">初期費用</div>
+          <div class="stat-num">相談</div>
+          <div class="stat-lbl">利用人数・発注規模</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">¥0</div>
-          <div class="stat-lbl">月額費用</div>
+          <div class="stat-num">確認</div>
+          <div class="stat-lbl">必要な支援・運用方法</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">無制限</div>
-          <div class="stat-lbl">利用人数</div>
+          <div class="stat-num">提案</div>
+          <div class="stat-lbl">提供範囲・適用条件</div>
         </div>
       </div>
-      <p class="pricing-note">費用はすべて無料です。ご不明点はお気軽にご相談ください。</p>
+      <p class="pricing-note">お弁当代・配送料などは、ご注文内容や店舗の条件によって異なります。法人向けの提供メニュー・費用・開始時期は、ご相談時にご確認ください。</p>
     </div>
   </section>
 
@@ -958,7 +1025,7 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
       <div class="faq-list">
         <details class="faq">
           <summary><span class="qm">Q</span>一括精算・コンシェルジュを既に利用していますが、移行は必要ですか？<span class="chev">⌄</span></summary>
-          <div class="faq-a">移行の手続きは不要です。今お使いのアカウントはそのまま、法人専用窓口の機能をあわせてご利用いただけます。</div>
+          <div class="faq-a">現在のご利用状況を伺い、法人向けサービスに必要な申し込みや登録をご案内します。既存サービスからの移行条件は個別に確認します。</div>
         </details>
         <details class="faq">
           <summary><span class="qm">Q</span>対応エリアはどこまでですか？<span class="chev">⌄</span></summary>
@@ -966,11 +1033,11 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
         </details>
         <details class="faq">
           <summary><span class="qm">Q</span>部署の追加・変更はどのように行いますか？<span class="chev">⌄</span></summary>
-          <div class="faq-a">担当窓口までご連絡いただければ、随時反映いたします。</div>
+          <div class="faq-a">担当窓口へご相談ください。一括精算の登録単位や招待・承諾の状況を確認し、必要なお手続きをご案内します。</div>
         </details>
         <details class="faq">
           <summary><span class="qm">Q</span>請求書はどのように受け取れますか？<span class="chev">⌄</span></summary>
-          <div class="faq-a">月次でまとめて発行し、部門ごとの内訳とあわせてお送りします。</div>
+          <div class="faq-a">一括精算の申し込み単位で発行します。部門別の集計レポートをご希望の場合は、提供範囲や頻度を別途ご相談ください。</div>
         </details>
       </div>
     </div>
@@ -980,10 +1047,11 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   <section class="final-cta" id="contact">
     <div class="shell reveal">
       <div class="eyebrow" style="justify-content:center;">Contact</div>
-      <h2>まずは資料で、<br>詳しくご検討ください。</h2>
+      <h2>管理・精算も、大口発注も。<br>ご相談はこちらから。</h2>
+      <p>現在ご利用いただける各サービスの案内へ進みます。</p>
       <div class="btn-row">
-        <a class="btn cta-button" href="#">資料請求する<svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4M9 12h6M9 16h6"/></svg></a>
-        <a class="btn ghost cta-button" href="#">お問い合わせ<svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg></a>
+        <a class="btn cta-button" href="https://www.kurumesi-bentou.com/business/">管理・一括精算のご相談</a>
+        <a class="btn ghost cta-button" href="https://www.kurumesi-bentou.com/concierge/">大口発注・手配のご相談</a>
       </div>
     </div>
   </section>
@@ -1015,6 +1083,39 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
 
 <script>
 (function () {
+  var tabs = Array.from(document.querySelectorAll('.consult-tabs [role="tab"]'));
+  function selectTab(tab) {
+    tabs.forEach(function (item) {
+      var active = item === tab;
+      item.setAttribute('aria-selected', String(active));
+      item.tabIndex = active ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+    });
+  }
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () { selectTab(tab); });
+    tab.addEventListener('keydown', function (event) {
+      var next;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') next = tabs[1 - index];
+      if (event.key === 'Home') next = tabs[0];
+      if (event.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { event.preventDefault(); selectTab(next); next.focus(); }
+    });
+  });
+  function revealTarget(hash) {
+    var target = document.getElementById(hash.slice(1));
+    var panel = target && target.closest('.consult-panel');
+    if (panel) {
+      selectTab(document.getElementById(panel.getAttribute('aria-labelledby')));
+      target.scrollIntoView({block: 'start'});
+    }
+  }
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (link) revealTarget(link.getAttribute('href'));
+  });
+  window.addEventListener('hashchange', function () { revealTarget(location.hash); });
+  revealTarget(location.hash);
   var header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
     header.classList.toggle('scrolled', window.scrollY > 4);
