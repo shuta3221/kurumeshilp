@@ -662,7 +662,7 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   <section class="hero">
     <div class="shell hero-grid">
       <div class="eyebrow">法人のお客様へ</div>
-      <h1>大人数のお弁当手配も、<br>会社の精算・管理も。</h1>
+      <h1 class="hero-title"><span class="hero-title-line"><span>大人数の</span><span>お弁当手配も、</span></span><span class="hero-title-line"><span>会社の</span><span>精算・管理も。</span></span></h1>
       <div class="hero-illustration" role="img" aria-label="タブレットで法人向けお弁当手配サービスを利用する担当者のイラスト" style="background-image:url(&quot;hero-kurumeshi-transparent.png&quot;);"></div>
       <p class="section-sub">大量・継続的な発注を相談したい方も、社内の請求・利用状況を整理したい方も。くるめしが、ご相談内容に合わせて法人のお弁当利用をサポートします。</p>
       <div class="badge-row">
@@ -677,6 +677,10 @@ table.compare tbody tr:hover td:first-child{color:var(--red)}
   </section>
 
   <style>
+    .hero h1.hero-title{font-size:clamp(32px,3.6vw,48px);line-height:1.4;letter-spacing:-.035em;min-width:0}
+    .hero-title-line{display:flex;flex-wrap:wrap;column-gap:0}
+    .hero-title-line > span{display:inline-block;white-space:nowrap}
+    @media(max-width:900px){.hero h1.hero-title{font-size:clamp(28px,7.5vw,48px)}}
     #windows{padding-bottom:24px}
     .consult-panel > section:first-child{padding-top:36px}
     .bulk-visual{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:36px;margin-top:28px}
