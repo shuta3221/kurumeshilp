@@ -1,0 +1,85 @@
+/* Visual language aligned with kurumesi-bentou.com/business/.
+   Reference: Yu Gothic stack, #f25042 / #8c7851, 5px corners, no card shadows. */
+:root{--red:#f25042;--ink:#2e2828;--muted:#5e5a5a;--line:#d8d8d8;--blue:#8c7851}
+body,body button,body input{font-family:"游ゴシック","Yu Gothic","游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","Meiryo UI","メイリオ",Meiryo,sans-serif;font-weight:500;letter-spacing:.03em}
+body{font-size:16px;line-height:1.7;background:#f9f4ef;color:#2e2828}
+body .wrap{max-width:1114px}
+body h1,body h2,body h3,body strong{font-weight:700;letter-spacing:.03em}
+body h2{font-size:28px;text-align:center;line-height:1.6;margin:0 0 32px}
+body h3{font-size:20px;line-height:1.7}
+body p{line-height:1.7}
+body .lead{font-size:16px;line-height:1.85;color:#5e5a5a}
+body .wrap>.lead,body .guide-intro{margin-left:auto;margin-right:auto;text-align:center}
+body .scope{background:#f3f2f0;color:#716040;font-size:12px}
+body header{position:relative;padding-top:20px;padding-bottom:20px;border-bottom:1px solid #d8d8d8}
+body .header-brand span{color:#5e5a5a}
+body nav a:last-child{background:#f25042;border-radius:5px}
+body main>section,body main>#guide,body main>#support,body main>#business{background:#f9f4ef}
+body main>.hero{background:#fff;padding-top:40px;padding-bottom:40px}
+body .hero h1{font-size:clamp(28px,3.5vw,40px);letter-spacing:.03em;line-height:1.6}
+body .hero h1 span{white-space:normal;text-wrap:balance}
+body .hero-art img{height:auto;max-height:340px;object-fit:contain}
+body .hero-art .caption{display:none}
+body .hero .label{display:block;color:#5e5a5a;font-size:16px;font-weight:700;letter-spacing:.03em}
+body .label{display:none}
+body .hero .label:before{display:none}
+body .hero-values{gap:10px 16px;color:#5e5a5a}
+body .hero-values li:before{color:#f25042}
+body .card,body .diagram,body .guide-box,body .needs-grid article,body .flow>div{box-shadow:none;border-radius:5px}
+body .card{border:0;background:#fff;padding:30px}
+body .two,body .three{gap:24px}
+body .needs-grid article{border:1px solid #d8d8d8;border-top:0;padding:0 24px 24px}
+body .needs-grid article:first-child,body .needs-grid article:last-child{border-top:0}
+body .need-number{background:#8c7851;color:#fff;margin:0 -24px 24px;padding:14px 24px;border-radius:5px 5px 0 0;font-size:16px}
+body .needs-grid article:nth-child(2) .need-number{background:#f25042}
+body .needs-grid h3{font-size:20px}
+body .needs-grid strong{font-size:16px}
+body .needs-grid a{font-size:14px}
+body .combined-note{background:#fff;border:1px solid #d8d8d8;border-radius:5px;color:#5e5a5a}
+body #support .diagram{margin-bottom:24px}
+body .flow{gap:24px}
+body .flow>div{border:0;padding:20px;text-align:center}
+body .flow>div:not(:last-child):after{display:none}
+body .flow strong{font-size:16px}
+body .step{color:#f25042;margin-bottom:8px}
+body #support #ordering,body #support #accounting>.card{border:0;border-radius:5px;box-shadow:none;padding:32px;gap:32px}
+body #support .support-copy h3{color:#5e5a5a;font-size:22px;border-bottom:1px solid #d8d8d8;padding-bottom:14px}
+body #support #ordering .support-art,body #support #accounting .support-art{width:100%;height:auto;max-width:300px}
+body #support .change-strip{border-radius:5px;background:#f9f4ef}
+body .support-process li{background:#f9f4ef;border-radius:5px;color:#716040}
+body #support .change-strip strong{color:#716040}
+body .mid-conversion.mid-conversion{background:#f9f4ef}
+body .mid-conversion-box{border:0;border-radius:5px;background:#fff;padding:32px;gap:24px}
+body .mid-conversion-box h2{font-size:24px;text-align:left;margin:0 0 14px}
+body .mid-conversion-box p,body .mid-conversion-action p{font-size:14px;color:#5e5a5a}
+body .button{background:#f25042;border:0;border-radius:5px;box-shadow:none;color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em;text-align:center;line-height:1.5;padding:20px 24px;text-decoration:none}
+body a.button:before{content:none;display:none}
+body .button:hover{background:#b52f25;color:#fff}
+body .three .card{padding:28px;background:#fff;border:0;border-radius:5px}
+body .three .card:before{display:none}
+body .order{gap:0;background:#fff;padding:28px;border-radius:5px}
+body .order li{border-top:0;padding:0 22px}
+body .order li:not(:last-child){border-right:1px solid #d8d8d8}
+body .order li:before{font-size:24px;color:#f25042}
+body details{max-width:780px;margin:auto;padding:24px 0;border-bottom:1px solid #d8d8d8}
+body summary{font-size:16px}
+body summary:before{color:#8c7851;font-size:24px;font-weight:500;top:-5px}
+body details p{position:relative;font-size:16px}
+body details p:before{content:"A";position:absolute;left:0;top:2px;color:#f25042;font-size:24px}
+body .guide-box{border:0;border-radius:5px;background:#fff;padding:32px}
+body .guide-progress{color:#8c7851}
+body .guide-box progress,body .guide-choices input{accent-color:#f25042}
+body .guide-choices label{border-radius:5px;border-color:#d8d8d8}
+body .guide-choices label:has(input:checked){background:#f9f4ef;border-color:#8c7851}
+body .guide-summary{background:#f9f4ef}
+body main>#contact{background:#fff;color:#5e5a5a}
+body #contact .lead,body #contact .note{color:#5e5a5a}
+body .contact-prep>div{border-color:#d8d8d8;border-radius:5px;background:#fff}
+body .contact-prep p{color:#5e5a5a}
+body footer{background:#f9f4ef;color:#716040;border-top:1px solid #d8d8d8}
+@media(max-width:700px){body h2{font-size:24px;margin-bottom:24px}body .hero h1{font-size:28px}body .button{font-size:16px;padding:18px 20px}body .mid-conversion-box{padding:24px}body .mid-conversion-box h2{text-align:center;font-size:22px}body .order{grid-template-columns:1fr;padding:24px}body .order li{padding:18px 0}body .order li:not(:last-child){border-right:0;border-bottom:1px solid #d8d8d8}body #support #ordering,body #support #accounting>.card{padding:24px}body .guide-box{padding:24px 18px}body .header-brand span{font-size:12px}}
+body .needs-grid article:first-child .need-number{background:#8c7851}
+body .needs-grid article:nth-child(2) .need-number{background:#c94236}
+body .needs-grid article:last-child .need-number{background:#456b7a}
+body .needs-grid .need-number{display:flex;align-items:center;gap:10px;min-height:64px}
+body .need-icon{flex:0 0 28px;width:28px;height:28px}
