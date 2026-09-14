@@ -93,6 +93,18 @@ body .service-proof>div{display:grid;grid-template-columns:1fr 1fr;gap:0;max-wid
 body .service-proof strong{display:flex;align-items:baseline;justify-content:center;font-family:Arial,"Yu Gothic",sans-serif;font-variant-numeric:tabular-nums;font-size:clamp(40px,5.5vw,64px);font-weight:700;color:#c94236;line-height:1.15;letter-spacing:-.025em;padding:8px 20px}
 body .service-proof strong+strong{border-left:1px solid #e6ddd3}
 body .service-proof strong span{font-family:"Yu Gothic",Meiryo,sans-serif;font-size:18px;font-weight:700;color:#716040;margin-left:10px;letter-spacing:.03em}
-body .service-proof .note{font-size:12px;line-height:1.65;color:#706b65;letter-spacing:0;text-align:left;margin:0;padding-top:14px;border-top:1px solid #eee8e2}
+body .service-proof .note{font-size:11px;line-height:1.65;color:#706b65;letter-spacing:0;text-align:right;margin:0;padding-top:10px;border-top:0}
 body .service-proof .note a{color:inherit;text-underline-offset:3px}
 @media(max-width:700px){body .service-proof{padding:24px 18px 16px}body .service-proof>p:first-child{font-size:16px;margin-bottom:18px}body .service-proof>div{margin-bottom:20px}body .service-proof strong{font-size:clamp(32px,8vw,48px);padding:6px 8px;flex-wrap:wrap;gap:4px}body .service-proof strong span{font-size:14px;margin-left:4px}body .service-proof .note br{display:none}body #support h2{font-size:23px}}
+/* Shared three-stage process and illustrated service metrics. */
+body #support .support-process{display:grid;grid-template-columns:1fr;gap:24px;margin:20px 0;padding:0;list-style:none}
+body #support .support-process li{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;padding:12px 10px;border-radius:22px;background:#f5eee5;color:#716040;text-align:center;font-size:14px;line-height:1.6}
+body #support .support-process li:after{content:none}
+body .process-arrow{position:absolute;width:18px;height:18px;right:calc(50% - 9px);top:auto;bottom:-21px;transform:rotate(90deg);color:#8c7851}
+body .service-proof>div{gap:20px;max-width:820px}
+body .proof-metric{display:flex;align-items:center;justify-content:center;gap:12px;background:#f8f3ec;border-radius:5px;padding:22px 12px;min-width:0}
+body .proof-metric:last-child{background:#f3f6f7}
+body .proof-icon{width:40px;height:40px;flex-shrink:0;color:#8c7851}
+body .proof-metric:last-child .proof-icon{color:#456b7a}
+body .proof-metric strong{font-size:clamp(36px,4.8vw,56px);padding:0}
+@media(max-width:700px){body #support .support-process{grid-template-columns:1fr;gap:24px}body .process-arrow{right:calc(50% - 9px);top:auto;bottom:-21px;transform:rotate(90deg)}body .service-proof>div{gap:12px}body .proof-metric{flex-direction:column;gap:12px;padding:18px 8px}body .proof-icon{width:32px;height:32px}body .proof-metric strong{font-size:clamp(28px,7vw,40px)}}
