@@ -108,3 +108,13 @@ body .proof-icon{width:40px;height:40px;flex-shrink:0;color:#8c7851}
 body .proof-metric:last-child .proof-icon{color:#456b7a}
 body .proof-metric strong{font-size:clamp(36px,4.8vw,56px);padding:0}
 @media(max-width:700px){body #support .support-process{grid-template-columns:1fr;gap:24px}body .process-arrow{right:calc(50% - 9px);top:auto;bottom:-21px;transform:rotate(90deg)}body .service-proof>div{gap:12px}body .proof-metric{flex-direction:column;gap:12px;padding:18px 8px}body .proof-icon{width:32px;height:32px}body .proof-metric strong{font-size:clamp(28px,7vw,40px)}}
+body .icon-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px}
+body .cta-icon{width:22px;height:22px;flex:0 0 22px}
+body .hero-actions{display:flex;gap:12px;align-items:stretch;margin-top:24px}
+body .hero-actions .button{flex:1;min-width:0;margin:0;padding:16px 12px;font-size:15px}
+body .button.diagnosis-cta{background:#8c7851;border:1px solid #8c7851;color:#fff}
+body .button.diagnosis-cta:hover{background:#716040;border-color:#716040;color:#fff}
+body .hero-actions{flex-wrap:wrap}
+body .hero-actions .button{flex:1 0 235px;max-width:100%;box-sizing:border-box}
+body .mid-conversion-action .icon-cta{display:inline-flex}
+@media(max-width:700px){body .hero-actions{flex-direction:column}body .hero-actions .button{flex:auto;font-size:16px;padding:18px 12px}body .mid-conversion-action .icon-cta{display:flex}}
