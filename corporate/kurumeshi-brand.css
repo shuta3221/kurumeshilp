@@ -110,6 +110,19 @@ body .proof-metric strong{font-size:clamp(36px,4.8vw,56px);padding:0}
 @media(max-width:700px){body #support .support-process{grid-template-columns:1fr;gap:24px}body .process-arrow{right:calc(50% - 9px);top:auto;bottom:-21px;transform:rotate(90deg)}body .service-proof>div{gap:12px}body .proof-metric{flex-direction:column;gap:12px;padding:18px 8px}body .proof-icon{width:32px;height:32px}body .proof-metric strong{font-size:clamp(28px,7vw,40px)}}
 body .icon-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px}
 body .cta-icon{width:22px;height:22px;flex:0 0 22px}
+body .mid-conversion-box .cta-copy-unit{display:inline-block;max-width:100%;text-wrap:pretty}
+body #start .fee-note{font-size:11px;line-height:1.65;color:#706b65;text-align:right;margin:12px 0 0}
+/* Alternate content surfaces while retaining the Kurumeshi palette. */
+body main>#business{background:#fff}
+body main>#support{background:#f9f4ef}
+body main>#guide{background:#fff}
+body main>#guide .guide-box{background:#fbf8f4;border:1px solid #e6ddd3}
+body main>.mid-conversion{background:#fff}
+body .mid-conversion-box{background:#f5eee5;border:1px solid #e6ddd3}
+body main>#use-cases{background:#f9f4ef}
+body main>#start{background:#fff}
+body #start .order{background:#fbf8f4;border:1px solid #e6ddd3}
+body .hero-art img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
 body .hero-actions{display:flex;gap:12px;align-items:stretch;margin-top:24px}
 body .hero-actions .button{flex:1;min-width:0;margin:0;padding:16px 12px;font-size:15px}
 body .button.diagnosis-cta{background:#8c7851;border:1px solid #8c7851;color:#fff}
@@ -118,3 +131,28 @@ body .hero-actions{flex-wrap:wrap}
 body .hero-actions .button{flex:1 0 235px;max-width:100%;box-sizing:border-box}
 body .mid-conversion-action .icon-cta{display:inline-flex}
 @media(max-width:700px){body .hero-actions{flex-direction:column}body .hero-actions .button{flex:auto;font-size:16px;padding:18px 12px}body .mid-conversion-action .icon-cta{display:flex}}
+/* Keep navigation accessible while scrolling, with fewer links on mobile. */
+body header{position:sticky;top:0;z-index:100;background:#fff;display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between}
+body header nav{flex-wrap:nowrap;flex-shrink:0;margin-left:auto;white-space:nowrap}
+body header .header-brand{min-width:0}
+@media(max-width:1000px){
+ body header nav a[href="#support"],body header nav a[href="#start"]{display:none}
+}
+/* Full-width conversion bands; copy remains aligned with page content. */
+body main>.mid-conversion.mid-conversion{background:#f5eee5;padding-top:0;padding-bottom:0;border-top:1px solid #e6ddd3;border-bottom:1px solid #e6ddd3}
+body .mid-conversion>.wrap{max-width:none;padding:0}
+body .mid-conversion .mid-conversion-box{width:100%;max-width:940px;margin:0 auto;padding:36px 32px;background:transparent;border:0;border-radius:0;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px}
+body .mid-conversion-action .button{width:100%;max-width:400px}
+@media(max-width:700px){body .mid-conversion .mid-conversion-box{grid-template-columns:1fr;padding:28px 22px;gap:18px;text-align:center}body .mid-conversion-action .button{max-width:none}}
+@media(max-width:520px){
+ body header .header-brand{flex-shrink:1;gap:0}
+ body header .header-brand span{display:none}
+ body header .header-brand img{width:112px;height:auto;max-width:100%}
+}
+@media(max-width:700px){
+ body header{padding:12px 16px;gap:10px;align-items:center}
+ body header nav a[href="#support"],body header nav a[href="#start"]{display:none}
+ body header nav{margin-left:auto}
+ body header nav a:last-child{padding:9px 12px;font-size:12px}
+ body main section{scroll-margin-top:145px}
+}
