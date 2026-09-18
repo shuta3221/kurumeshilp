@@ -72,7 +72,7 @@ body .guide-box progress,body .guide-choices input{accent-color:#f25042}
 body .guide-choices label{border-radius:5px;border-color:#d8d8d8}
 body .guide-choices label:has(input:checked){background:#f9f4ef;border-color:#8c7851}
 body .guide-summary{background:#f9f4ef}
-body main>#contact{background:#fff;color:#5e5a5a}
+body main>#contact{background:#f5eee5;color:#5e5a5a;border-top:1px solid #e6ddd3}
 body #contact .lead,body #contact .note{color:#5e5a5a}
 body .contact-prep>div{border-color:#d8d8d8;border-radius:5px;background:#fff}
 body .contact-prep p{color:#5e5a5a}
