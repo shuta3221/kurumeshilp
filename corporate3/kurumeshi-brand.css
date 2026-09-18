@@ -138,6 +138,55 @@ body header .header-brand{min-width:0}
 @media(max-width:1000px){
  body header nav a[href="#support"],body header nav a[href="#start"]{display:none}
 }
+/* DADS-inspired trial: remove this block to restore the previous styling.
+   Applies selected readability/interaction guidance, not full DADS compliance. */
+body{line-height:1.75}
+body p{line-height:1.75}
+body .lead{line-height:1.85}
+body h2{line-height:1.5;text-wrap:pretty}
+body h3{line-height:1.6;text-wrap:pretty}
+body .note,body .hero .note,body .hero .screening-note,body #start .fee-note,body .service-proof .note{font-size:14px;line-height:1.7;color:#625d57}
+body .hero .screening-note,body #start .fee-note,body .service-proof .note{text-align:right}
+body .mid-conversion-box p,body .mid-conversion-action p,body .order li p,body .needs-grid p,body .pain{font-size:16px;line-height:1.75}
+body .button,body nav a:last-child{background:#c43d30;color:#fff}
+body .button:hover,body nav a:last-child:hover{background:#a52f24;color:#fff;text-decoration:underline;text-underline-offset:4px}
+body .conversion-actions .inquiry-cta,body .button.diagnosis-cta{background:#716040;color:#fff}
+body .conversion-actions .inquiry-cta:hover,body .button.diagnosis-cta:hover{background:#594a30}
+body .button,body .guide-back{min-height:48px}
+body header nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+body .context-cta,body .needs-grid article>a{display:inline-flex;align-items:center;min-height:44px}
+body a:focus-visible,body button:focus-visible,body summary:focus-visible,body input:focus-visible{outline:3px solid #1c1c1c;outline-offset:3px;box-shadow:0 0 0 3px #fff}
+body .guide-box legend:focus,body .guide-box h3:focus{outline-offset:6px}
+body details{padding:16px 0}
+body summary{min-height:48px;display:flex;align-items:center;padding:10px 36px}
+body summary:before{top:9px}
+body summary:after{top:10px}
+body details p{margin:8px 0 16px}
+body .guide-choices label{min-height:56px;padding:16px;border:1px solid #999;gap:16px}
+body .guide-choices label:has(input:checked){border:2px solid #716040;padding:15px;background:#f5eee5}
+body .guide-choices label:focus-within{outline:3px solid #1c1c1c;outline-offset:3px}
+body .guide-choices input{accent-color:#716040}
+body .guide-back{padding:12px 16px;font-size:16px}
+body .guide-actions{flex-wrap:wrap;gap:16px}
+body .guide-box .button{white-space:normal;overflow-wrap:anywhere}
+body .section-icon,body .need-icon{stroke-width:1.75}
+body .card,body .needs-grid article,body .guide-box{box-shadow:none}
+body .hero-layout,body .mid-conversion-box{gap:32px}
+body .conversion-actions{gap:16px}
+body .hero h1 span{white-space:normal}
+body .hero-art img{max-width:100%;height:auto}
+@media(max-width:700px){
+ body .wrap{padding-left:20px;padding-right:20px}
+ body header nav a:last-child{font-size:14px;padding:10px 12px}
+ body #support #ordering,body #support #accounting>.card{padding:24px 20px}
+ body .guide-box{padding:24px 20px}
+ body .guide-box legend,body .guide-box h3{font-size:20px}
+ body .hero .conversion-actions .button,body .conversion-actions .button{font-size:16px;min-height:56px}
+ body .mid-conversion .mid-conversion-box{gap:24px;padding:32px 20px}
+ body .service-proof .note{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body .hero .screening-note{font-size:11px;line-height:1.6;margin-top:10px;max-width:none;text-align:right}
 /* Benefit-led corporate service revision. */
 body .conversion-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 12px;justify-content:center}
 body .conversion-actions .button{display:flex;align-items:center;justify-content:center;flex:1 1 210px;max-width:360px;min-height:64px;margin:0;font-size:18px;padding:18px 20px}
