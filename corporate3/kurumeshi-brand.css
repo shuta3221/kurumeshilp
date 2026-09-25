@@ -208,7 +208,28 @@ body #start .order{grid-template-columns:repeat(3,minmax(0,1fr))}
 body .mid-conversion-action .conversion-actions{margin:0;flex-direction:column}
 body .mid-conversion-action .conversion-actions .button{flex:auto;max-width:none;width:100%}
 body #visibility{scroll-margin-top:110px}
-@media(max-width:1000px){body .hero-layout{grid-template-columns:1fr}body .hero-art{max-width:520px;margin:auto}}
+/* Keep artwork beside the headline, never below the conversion buttons. */
+body .hero-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);gap:clamp(12px,2.4vw,28px);align-items:center}
+body .hero-art{width:100%;max-width:480px;margin:0 auto;justify-self:center}
+body .hero-art img{display:block;width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:4/3;object-fit:contain}
+body .hero-layout>div{min-width:0}
+@media(max-width:1000px){
+ body .hero .hero-layout{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"label label" "headline artwork" "intro intro" "values values" "actions actions" "note note";column-gap:16px;row-gap:12px}
+ body .hero-layout>div:first-child{display:contents}
+ body .hero-layout>div:first-child>.label{grid-area:label;margin:0}
+ body .hero .hero-layout h1{grid-area:headline;margin:0;font-size:clamp(22px,3.5vw,34px);line-height:1.6}
+ body .hero .hero-art{grid-area:artwork;width:100%;max-width:380px;margin:0;align-self:center}
+ body .hero-layout .lead{grid-area:intro;max-width:none;margin:4px 0 0;font-size:16px}
+ body .hero-values{grid-area:values;margin:4px 0}
+ body .hero .conversion-actions{grid-area:actions;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:8px 0 0}
+ body .hero .conversion-actions .button{width:100%;max-width:none;min-width:0;margin:0;padding:14px 10px;font-size:16px}
+ body .hero .screening-note{grid-area:note;margin:0}
+}
+@media(max-width:480px){
+ body .hero .hero-layout{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);column-gap:8px}
+ body .hero .hero-layout h1{font-size:clamp(20px,5.1vw,24px);letter-spacing:0}
+ body .hero .conversion-actions{grid-template-columns:minmax(0,1fr);gap:8px}
+}
 @media(max-width:700px){body .feature-pillars,body #start .order{grid-template-columns:1fr}body .conversion-actions{flex-direction:column}body .conversion-actions .button{flex:auto;max-width:none;width:100%}body .hero h1{font-size:clamp(24px,6vw,32px)}}
 /* Full-width conversion bands; copy remains aligned with page content. */
 body main>.mid-conversion.mid-conversion{background:#f5eee5;padding-top:0;padding-bottom:0;border-top:1px solid #e6ddd3;border-bottom:1px solid #e6ddd3}
